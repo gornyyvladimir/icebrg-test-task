@@ -23,8 +23,7 @@ const FormSchema = z.object({
   password: z.string().min(8),
 });
 
-interface Props {}
-const Login = (props: Props) => {
+const Login = () => {
   const { updateAuth } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();

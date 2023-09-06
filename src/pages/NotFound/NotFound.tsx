@@ -1,5 +1,4 @@
-interface Props {}
-const NotFound = (props: Props) => {
-  return <div>NotFound</div>;
-};
+import './styles.css';
+
+const NotFound = () => <div className="not-found">Page not found</div>;
 export default NotFound;

@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </AuthProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
-      <ToastContainer theme="colored" />
+      <ToastContainer theme="colored" position="bottom-right" />
     </BrowserRouter>
   </React.StrictMode>,
 );
