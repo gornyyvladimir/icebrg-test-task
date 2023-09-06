@@ -1,0 +1,19 @@
+.form__item {
+  margin-bottom: 16px;
+}
+
+.form__label {
+  margin-bottom: 8px;
+}
+
+.form__description,
+.form__message {
+  color: hsl(var(--light-gray));
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.form__label--error,
+.form__message--error {
+  color: hsl(var(--error));
+}

@@ -1,0 +1,17 @@
+.button {
+  all: unset;
+  padding: 8px 16px;
+  color: hsl(var(--white));
+  background-color: hsl(var(--primary));
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:focus {
+  box-shadow: var(--focus-shadow);
+}
+
+.button:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}

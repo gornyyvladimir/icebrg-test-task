@@ -10,8 +10,8 @@ import {
   FormProvider,
   useFormContext,
 } from 'react-hook-form';
-
 import Label from '../Label/Label';
+import './styles.css';
 
 const Form = FormProvider;
 
@@ -178,7 +178,11 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={classNames('form__message', className)}
+      className={classNames(
+        'form__message',
+        error && 'form__message--error',
+        className,
+      )}
       {...props}
     >
       {body}
