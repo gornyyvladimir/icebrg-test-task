@@ -14,6 +14,7 @@ const useSearchQuery = (
       const { data } = await axios.post<SearchResponse>(`/search`, { query });
       return data;
     },
+    staleTime: 5 * 60 * 1000,
     ...options,
   });
 };
