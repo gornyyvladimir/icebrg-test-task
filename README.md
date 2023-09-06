@@ -1,27 +1,43 @@
-# React + TypeScript + Vite
+# Icebrg test task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was bootstrapped with [Vite](https://vitejs.dev/).
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Welcome to the React TypeScript project! This project is built using React and TypeScript and provides a starting point for developing web applications with these technologies. Follow the instructions below to set up and run the project.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before you begin, ensure you have the following software installed on your machine:
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js: You can download it from [nodejs.org](https://nodejs.org/).
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Getting Started
+
+To get started with the project, follow these steps:
+
+1. Clone this repository to your local machine:
+
+   ```shell
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```shell
+   cd project-directory
+   ```
+
+3. Install the project dependencies using npm:
+
+   ```shell
+   npm install
+   ```
+
+## Running the Development Server
+
+```shell
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This will start a development server and open the application in your default web browser. The application will automatically reload whenever you make changes to the source code, making it easy to develop and test your application.
