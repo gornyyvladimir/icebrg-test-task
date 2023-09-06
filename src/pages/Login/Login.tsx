@@ -1,3 +1,4 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -12,6 +13,8 @@ import {
 import Card from '../../components/Card/Card';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import useLoginMutation from '../../hooks/useLoginMutation';
+import useAuth from '../../hooks/useAuth';
 import './styles.css';
 
 const FormSchema = z.object({
@@ -21,6 +24,11 @@ const FormSchema = z.object({
 
 interface Props {}
 const Login = (props: Props) => {
+  const { updateAuth } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+
   const form = useForm<z.infer<typeof FormSchema>>({
     defaultValues: {
       email: '',
@@ -29,9 +37,23 @@ const Login = (props: Props) => {
     resolver: zodResolver(FormSchema),
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
-  }
+  const { mutate, isLoading } = useLoginMutation({
+    onSuccess: (data) => {
+      console.log(data);
+      updateAuth({
+        accessToken: data.access_token,
+        refreshToken: data.refresh_token,
+      });
+      navigate(from);
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+
+  const onSubmit = (data: z.infer<typeof FormSchema>) => {
+    mutate(data);
+  };
 
   return (
     <div className="login">
