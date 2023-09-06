@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { toast } from 'react-toastify';
 import {
   Form,
   FormField,
@@ -37,17 +38,17 @@ const Login = (props: Props) => {
     resolver: zodResolver(FormSchema),
   });
 
-  const { mutate, isLoading } = useLoginMutation({
+  const { mutate } = useLoginMutation({
     onSuccess: (data) => {
-      console.log(data);
+      toast.success('Login successful');
       updateAuth({
         accessToken: data.access_token,
         refreshToken: data.refresh_token,
       });
       navigate(from);
     },
-    onError: (error) => {
-      console.log(error);
+    onError: () => {
+      toast.error('Login failed');
     },
   });
 

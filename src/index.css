@@ -21,6 +21,7 @@
   /* other */
   --radius: 6px;
   --full-height: 100vh;
+  --toastify-font-family: var(--font-family);
 }
 
 html {

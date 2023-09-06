@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDebounce } from 'react-use';
+import { toast } from 'react-toastify';
 import useAuth from '../../hooks/useAuth';
 import useSearchQuery from '../../hooks/useSearchQuery';
 import Combobox from '../../components/Combobox/Combobox';
@@ -20,12 +21,18 @@ const Main = () => {
     [query],
   );
 
-  const { data, isFetching } = useSearchQuery(debouncedValue, {
+  const { data, isFetching, isError } = useSearchQuery(debouncedValue, {
     enabled: debouncedValue !== '',
     keepPreviousData: true,
   });
 
   const options = useMemo(() => getOptionsFromData(data), [data]);
+
+  useEffect(() => {
+    if (isError) {
+      toast.error('Something went wrong, try again later');
+    }
+  }, [isError]);
 
   return (
     <div className="main">
