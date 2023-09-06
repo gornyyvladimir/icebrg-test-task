@@ -1,0 +1,19 @@
+.combobox__input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid hsl(var(--input));
+  border-radius: var(--radius);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: var(--line-height-base);
+  color: hsl(var(--primary));
+  outline: none;
+}
+
+.combobox__input:focus {
+  box-shadow: var(--focus-shadow);
+}
+
+.combobox__input::placeholder {
+  color: hsl(var(--dark-gray));
+}

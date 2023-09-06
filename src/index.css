@@ -12,7 +12,6 @@
   --white: 0 0% 100%;
   --primary: 240 5.9% 10%;
   --dark-gray: 240 3.8% 46.1%;
-  --light-gray: 240 3.8% 46.1%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
   --error: 0 84.2% 60.2%;
@@ -21,6 +20,7 @@
     rgb(161, 161, 170) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   /* other */
   --radius: 6px;
+  --full-height: 100vh;
 }
 
 html {
@@ -38,4 +38,22 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+/* fix height for mobile safari */
+@supports (height: 100dvh) {
+  :root {
+    --full-height: 100dvh;
+  }
 }

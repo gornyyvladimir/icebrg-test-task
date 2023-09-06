@@ -8,7 +8,7 @@
 
 .form__description,
 .form__message {
-  color: hsl(var(--light-gray));
+  color: hsl(var(--dark-gray));
   margin-top: 8px;
   margin-bottom: 0;
 }
