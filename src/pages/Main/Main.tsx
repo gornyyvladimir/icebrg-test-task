@@ -39,13 +39,17 @@ const Main = () => {
       <div className="header">
         <Button onClick={resetAuth}>Logout</Button>
       </div>
-      <Combobox
-        value={query}
-        onChange={setQuery}
-        onSelect={setQuery}
-        options={options}
-        isLoading={isFetching}
-      />
+      <div className="main__content">
+        <Combobox
+          placeholder="Search for a country..."
+          className="main__combobox"
+          value={query}
+          onChange={setQuery}
+          onSelect={setQuery}
+          options={options}
+          isLoading={isFetching}
+        />
+      </div>
     </div>
   );
 };

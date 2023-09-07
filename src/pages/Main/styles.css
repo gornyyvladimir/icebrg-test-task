@@ -7,3 +7,12 @@
   align-items: center;
   margin-bottom: 30px;
 }
+
+.main__content {
+  display: flex;
+  justify-content: center;
+}
+
+.main__combobox {
+  max-width: calc(768px - 32px);
+}
